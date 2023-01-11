@@ -1,0 +1,31 @@
+.card {
+  min-width: 35rem;
+  margin: auto;
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  gap: 1rem;
+}
+
+.submitBtn {
+  margin-top: 2rem;
+}
+
+.testLoginContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.testLoginContainer button {
+  background-color: var(--clr-dark-2);
+}
+
+.testLoginContainer button:hover {
+  background-color: var(--clr-light-4);
+}
+
+@media only screen and (max-width: 40rem) {
+  .testLoginContainer {
+    grid-template-columns: 1fr;
+  }
+}

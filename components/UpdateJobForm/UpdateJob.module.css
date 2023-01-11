@@ -1,0 +1,70 @@
+.modal {
+  width: 95vw;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: 2rem auto;
+}
+
+.form {
+  gap: 3rem;
+  display: grid;
+}
+
+.inputContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.submitBtn {
+  justify-self: center;
+  min-width: 20rem;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.loadingContainer {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+
+.description {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.submitBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.submitBtnContainer button:first-child {
+  background-color: var(--clr-success-1);
+}
+.submitBtnContainer button:last-child {
+  background-color: var(--clr-error-1);
+}
+
+@media only screen and (max-width: 60rem) {
+  .inputContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .submitBtnContainer {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

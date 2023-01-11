@@ -1,0 +1,28 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.select {
+  padding: 1rem 0.9rem;
+  border-radius: 0.4rem;
+  border: 1.4px solid var(--clr-dark-2);
+}
+
+.select:focus {
+  border: 1.4px solid var(--clr-dark-1);
+}
+
+.helperText {
+  font-size: 1.3rem;
+}
+
+.errorText {
+  font-size: 1.3rem;
+  color: var(--clr-error-1);
+}
+
+.invalid {
+  color: var(--clr-error-1);
+}

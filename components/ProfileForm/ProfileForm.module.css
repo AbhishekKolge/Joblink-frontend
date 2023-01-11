@@ -1,0 +1,120 @@
+.card {
+  min-width: 60rem;
+  width: 80vw;
+  margin: auto;
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 140rem;
+}
+
+.submitBtn {
+  margin-top: 1.4rem;
+}
+
+.profileImage {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0.1rem solid var(--clr-dark-2);
+}
+
+.imageInput {
+  display: none;
+}
+
+.pdfLink {
+  display: block;
+  font-weight: 600;
+}
+
+.select {
+  border-radius: 0.4rem;
+  border: 1.4px solid var(--clr-dark-2);
+}
+
+.select:focus {
+  border: 1.4px solid var(--clr-dark-1);
+}
+
+.select div:first-of-type,
+.select div:first-of-type:hover {
+  box-shadow: none;
+  border: none;
+}
+
+.selectContainer {
+  display: grid;
+  gap: 0.5rem;
+}
+
+button.removeBtn,
+button.removeBtn:hover {
+  padding: 0;
+  background-color: transparent;
+  color: var(--clr-error-1);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+button.removeProfileImage {
+  margin: auto;
+  margin-top: 1.5rem;
+}
+
+div.resumeContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+button.deleteBtn {
+  background-color: var(--clr-error-1);
+  justify-self: center;
+}
+button.deleteBtn:hover {
+  background-color: var(--clr-error-1);
+}
+
+.modal {
+  display: grid;
+  gap: 2rem;
+}
+
+.modal h4 {
+  font-size: 2.4rem;
+}
+
+.actionBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.actionBtnContainer button:first-child {
+  background-color: var(--clr-error-1);
+}
+
+@media only screen and (max-width: 60rem) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 40rem) {
+  .card {
+    min-width: 45rem;
+  }
+}
+@media only screen and (max-width: 30rem) {
+  .card {
+    min-width: 40rem;
+  }
+}

@@ -1,0 +1,49 @@
+.card {
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  height: 100%;
+  color: var(--clr-dark-1);
+  position: relative;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  display: grid;
+  gap: 2rem;
+}
+
+.headerContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.headerDetails {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.jobImage {
+  border-radius: 50%;
+}
+
+.footerContainer {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.tagContainer {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: var(--clr-light-3);
+  color: var(--clr-light-1);
+  padding: 0.4rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.updateForm {
+  display: grid;
+}

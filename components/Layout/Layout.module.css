@@ -1,0 +1,169 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+div.navContainer {
+  padding: 0;
+}
+
+div.footerContainer {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header {
+  background-color: var(--clr-dark-1);
+}
+
+.logo {
+  width: auto;
+  height: 3rem;
+  display: block;
+  object-fit: contain;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 1rem 2rem;
+  min-height: 8rem;
+  position: relative;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  gap: 4rem;
+}
+
+.link {
+  color: var(--clr-light-1);
+  text-transform: capitalize;
+}
+
+.link.active {
+  color: var(--clr-primary-1);
+}
+
+.settingsContainer {
+  position: relative;
+}
+
+.linkBtn {
+  background-color: transparent;
+  color: var(--clr-light-1);
+  font-size: 2rem;
+}
+
+.menuCard {
+  position: absolute;
+  background-color: var(--clr-light-1);
+  border-radius: 0.3rem;
+  top: 4rem;
+  left: -0.4rem;
+  box-shadow: 0.4rem 0.4rem 3rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.settingsOption {
+  font-size: 1.6rem;
+  color: var(--clr-dark-1);
+  background-color: transparent;
+  padding: 0.8rem 1.5rem;
+  display: block;
+}
+
+.settingsOption:hover {
+  background-color: var(--clr-light-2);
+}
+
+.activeLink {
+  color: var(--clr-primary-1);
+}
+
+button.menuIcon {
+  display: none;
+}
+
+.sideMenu {
+  display: grid;
+  position: fixed;
+  background: var(--clr-dark-1);
+  right: 0;
+  top: 0;
+  padding: 10rem 3rem;
+  min-width: 25rem;
+  gap: 4rem;
+  display: none;
+  transform: translateX(100%);
+  transition: all 0.2s linear;
+  place-content: start;
+  justify-content: center;
+  z-index: 200;
+}
+
+.sideMenu.open {
+  transform: translateX(0);
+}
+
+.mobileLink {
+  color: var(--clr-light-1);
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  background-color: transparent;
+  text-transform: capitalize;
+  margin: auto;
+}
+
+.footer {
+  background-color: var(--clr-light-2);
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footerLogo {
+  object-fit: contain;
+}
+
+.info {
+  font-size: 1.2rem;
+}
+
+.credit {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 60rem) {
+  .linksContainer {
+    display: none;
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  button.menuIcon {
+    display: flex;
+  }
+
+  .sideMenu {
+    display: grid;
+  }
+
+  .footer {
+    display: none;
+  }
+}

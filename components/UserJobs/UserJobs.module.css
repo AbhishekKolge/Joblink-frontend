@@ -1,0 +1,77 @@
+.loadingContainer {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+
+.card {
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.submitBtn {
+  align-self: center;
+  margin-top: 1.4rem;
+}
+
+.jobList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.paginatePage {
+  width: 3rem;
+  background-color: var(--clr-primary-3);
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: var(--clr-light-1);
+}
+
+.activePaginatePage {
+  background-color: var(--clr-primary-1);
+  cursor: pointer;
+  color: var(--clr-light-1);
+}
+
+.paginateBtn {
+  background-color: var(--clr-light-3);
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  padding: 0 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--clr-light-1);
+}
+
+.paginateBtn:hover {
+  background-color: var(--clr-light-4);
+}
+
+.container {
+  display: grid;
+  gap: 4rem;
+}
+
+@media only screen and (max-width: 60rem) {
+  .jobList {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 40rem) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}

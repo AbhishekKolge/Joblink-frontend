@@ -1,0 +1,54 @@
+.form {
+  width: 100%;
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card {
+  min-width: 100%;
+  margin: auto;
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  gap: 2rem;
+}
+
+.inputContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.submitBtn {
+  justify-self: center;
+  min-width: 20rem;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  align-self: center;
+}
+
+.loadingContainer {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+
+.description {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+@media only screen and (max-width: 40rem) {
+  .inputContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

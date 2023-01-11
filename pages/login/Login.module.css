@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  gap: 3rem;
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.heading span {
+  color: var(--clr-primary-1);
+}
+
+.heading + h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.linkContainer {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+}
+
+.linkContainer li {
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+}
+
+.link span {
+  color: var(--clr-dark-1);
+}

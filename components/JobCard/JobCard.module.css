@@ -1,0 +1,109 @@
+.card {
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  height: 100%;
+  color: var(--clr-dark-1);
+}
+
+.card:hover {
+  background-color: var(--clr-light-5);
+  border: 0.1rem solid var(--clr-dark-2);
+}
+
+.jobImage {
+  border-radius: 50%;
+  border: 0.1rem solid var(--clr-dark-3);
+  object-fit: contain;
+}
+
+.headerContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--clr-light-2);
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.tag {
+  background-color: var(--clr-light-2);
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.headerDetails {
+  display: grid;
+  gap: 0.5rem;
+  margin-right: 6rem;
+}
+
+.title {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.company {
+  color: var(--clr-light-3);
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.category {
+  color: var(--clr-primary-1);
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.footerContainer span {
+  display: block;
+  font-weight: 600;
+}
+
+.footerContainer span strong {
+  font-weight: 400;
+  color: var(--clr-primary-1);
+  text-transform: capitalize;
+}
+
+.open {
+  background-color: var(--clr-success-1);
+  color: var(--clr-light-1);
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  justify-self: start;
+  text-transform: capitalize;
+}
+
+.closed {
+  background-color: var(--clr-error-1);
+  color: var(--clr-light-1);
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  justify-self: start;
+  text-transform: capitalize;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}

@@ -1,0 +1,126 @@
+.jobList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  box-shadow: 0.5rem 0.5rem 3rem 0.1rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.container {
+  display: grid;
+  gap: 4rem;
+}
+
+.paginateContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  color: var(--clr-primary-1);
+  justify-self: end;
+}
+
+.submitBtn {
+  align-self: center;
+  margin-top: 1.4rem;
+}
+
+.paginatePage {
+  width: 3rem;
+  background-color: var(--clr-primary-3);
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: var(--clr-light-1);
+}
+
+.activePaginatePage {
+  background-color: var(--clr-primary-1);
+  cursor: pointer;
+  color: var(--clr-light-1);
+}
+
+.paginateBtn {
+  background-color: var(--clr-light-3);
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  padding: 0 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--clr-light-1);
+}
+
+.paginateBtn:hover {
+  background-color: var(--clr-light-4);
+}
+
+.linkContainer {
+  position: relative;
+}
+
+.btnContainer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  z-index: 50;
+}
+
+.btnContainer button {
+  padding: 1rem;
+}
+
+.btnContainer button:first-child {
+  background-color: var(--clr-error-1);
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  display: grid;
+  gap: 2rem;
+}
+
+.modal h4 {
+  font-size: 2.4rem;
+}
+
+.actionBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.actionBtnContainer button:first-child {
+  background-color: var(--clr-error-1);
+}
+
+@media only screen and (max-width: 60rem) {
+  .jobList {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 40rem) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
