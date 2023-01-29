@@ -6,7 +6,6 @@ import { logoutHandler } from "../../actions/auth/authActions";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.NEXT_PUBLIC_URL,
-  credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const { accessToken, accessTokenExpirationTime } =
       getState().auth.tokenDetails;
