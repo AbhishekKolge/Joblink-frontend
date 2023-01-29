@@ -5,7 +5,7 @@ import { checkTimeIsExpired } from "../../../helpers/time";
 import { logoutHandler } from "../../actions/auth/authActions";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.NEXT_PUBLIC_URL,
+  baseUrl: process.env.NEXT_API_URL,
   prepareHeaders: (headers, { getState }) => {
     const { accessToken, accessTokenExpirationTime } =
       getState().auth.tokenDetails;
