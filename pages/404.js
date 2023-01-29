@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Head from "next/head";
 
 import styles from "./NotFound.module.css";
 
@@ -19,11 +20,16 @@ const NotFoundPage = () => {
   }, []);
 
   return (
-    <section className="fullHeight">
-      <Container className={styles.container}>
-        <h1>Not Found. Redirecting to home page...</h1>
-      </Container>
-    </section>
+    <>
+      <Head>
+        <title>Not Found</title>
+      </Head>
+      <section className="fullHeight">
+        <Container className={styles.container}>
+          <h1>Not Found. Redirecting to home page...</h1>
+        </Container>
+      </section>
+    </>
   );
 };
 

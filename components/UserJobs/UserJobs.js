@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import { useFormik } from "formik";
@@ -57,6 +57,7 @@ const sortOptions = [
 ];
 
 const UserJobs = () => {
+  const [currentPage, setCurrentPage] = useState(0);
   const { isLoggedIn, role } = useSelector((state) => state.auth);
   const [
     getUserApplications,
@@ -117,6 +118,7 @@ const UserJobs = () => {
   ]);
 
   const pageHandler = async (event) => {
+    setCurrentPage(event.selected);
     const page = event.selected + 1;
     await getUserApplications({ ...formik.values, page });
   };
@@ -188,6 +190,7 @@ const UserJobs = () => {
               activeLinkClassName={styles.activePaginatePage}
               previousLinkClassName={styles.paginateBtn}
               nextLinkClassName={styles.paginateBtn}
+              forcePage={currentPage}
             />
           )}
         </>

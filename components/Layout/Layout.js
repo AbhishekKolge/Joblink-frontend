@@ -70,11 +70,12 @@ const Layout = (props) => {
   }, [router.asPath]);
 
   useEffect(() => {
-    document.addEventListener("click", (e) => {
-      if (e.path[0] !== settingsBtnRef.current) {
-        setToggleSettings(false);
-      }
-    });
+    settingsBtnRef.current &&
+      document.addEventListener("click", (e) => {
+        if (e.path[0] !== settingsBtnRef.current) {
+          setToggleSettings(false);
+        }
+      });
   }, [settingsBtnRef]);
 
   return (

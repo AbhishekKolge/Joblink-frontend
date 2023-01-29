@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import styles from "./JobDetails.module.css";
 
 import JobDetails from "../../components/JobDetails/JobDetails";
@@ -7,11 +9,16 @@ const JobDetailsPage = (props) => {
   const { job } = props;
 
   return (
-    <section className="fullHeight">
-      <Container>
-        <JobDetails job={job} />
-      </Container>
-    </section>
+    <>
+      <Head>
+        <title>Job Details</title>
+      </Head>
+      <section className="fullHeight">
+        <Container>
+          <JobDetails job={job} />
+        </Container>
+      </section>
+    </>
   );
 };
 

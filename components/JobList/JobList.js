@@ -90,6 +90,7 @@ const JobList = (props) => {
     count: props.count,
     numOfPages: props.numOfPages,
   });
+  const [currentPage, setCurrentPage] = useState(0);
 
   const [
     getAllJobs,
@@ -144,6 +145,7 @@ const JobList = (props) => {
   }, [jobsRes, jobsSuccess, jobsIsError, jobsError]);
 
   const pageHandler = async (event) => {
+    setCurrentPage(event.selected);
     const page = event.selected + 1;
     await getAllJobs({ ...formik.values, page });
   };
@@ -255,6 +257,7 @@ const JobList = (props) => {
                 activeLinkClassName={styles.activePaginatePage}
                 previousLinkClassName={styles.paginateBtn}
                 nextLinkClassName={styles.paginateBtn}
+                forcePage={currentPage}
               />
             )}
           </>

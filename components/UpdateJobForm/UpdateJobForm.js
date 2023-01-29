@@ -158,8 +158,8 @@ const UpdateJobForm = (props) => {
         .oneOf(["full-time", "part-time", "contract", "internship"])
         .required("Required"),
       description: Yup.string().max(
-        500,
-        "Must not be more than 500 characters"
+        1000,
+        "Must not be more than 1000 characters"
       ),
       minSalary: Yup.number(),
       maxSalary: Yup.number(),

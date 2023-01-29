@@ -13,6 +13,8 @@ export default function App({ Component, pageProps }) {
     return Component.getLayout(
       <Provider store={store}>
         <Head>
+          <title>Joblink</title>
+          <meta name="description" content="A job searching web app" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
@@ -29,6 +31,8 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
+        <title>Joblink</title>
+        <meta name="description" content="A job searching web app" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"

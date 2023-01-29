@@ -128,9 +128,6 @@ const Application = (props) => {
           <strong>Gender</strong>: {user.gender}
         </span>
         <span>
-          <strong>Company</strong>: {user.companyName || "Not mentioned"}
-        </span>
-        <span>
           <strong>City</strong>: {user.city || "Not mentioned"}
         </span>
       </div>

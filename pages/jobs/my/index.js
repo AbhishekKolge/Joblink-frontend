@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import Head from "next/head";
 
 import Container from "../../../components/UI/Container/Container";
 import UserJobs from "../../../components/UserJobs/UserJobs";
@@ -27,18 +28,23 @@ const MyJobsPage = (props) => {
     name: "All",
   });
   return (
-    <section className="fullHeight">
-      <Container className={styles.container}>
-        <h1 className={styles.heading}>
-          {role === "employer" ? "Posted Jobs" : "Job Applications"}
-        </h1>
-        {role === "employer" ? (
-          <EmployerJobs jobCategories={categories} />
-        ) : (
-          <UserJobs />
-        )}
-      </Container>
-    </section>
+    <>
+      <Head>
+        <title>My Jobs</title>
+      </Head>
+      <section className="fullHeight">
+        <Container className={styles.container}>
+          <h1 className={styles.heading}>
+            {role === "employer" ? "Posted Jobs" : "Job Applications"}
+          </h1>
+          {role === "employer" ? (
+            <EmployerJobs jobCategories={categories} />
+          ) : (
+            <UserJobs />
+          )}
+        </Container>
+      </section>
+    </>
   );
 };
 

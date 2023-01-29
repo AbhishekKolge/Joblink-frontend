@@ -33,6 +33,10 @@
   gap: 1rem;
 }
 
+.description {
+  white-space: pre-line;
+}
+
 .title {
   font-weight: 700;
   text-transform: capitalize;

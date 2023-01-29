@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import Spinner from "../../../../components/UI/Spinner/Spinner";
 import Card from "../../../../components/UI/Card/Card";
@@ -60,6 +61,7 @@ const sortOptions = [
 const ApplicationsPage = () => {
   const router = useRouter();
   const { jobId } = router.query;
+  const [currentPage, setCurrentPage] = useState(0);
   const { isLoggedIn, role } = useSelector((state) => state.auth);
   const [
     getJobApplications,
@@ -120,94 +122,101 @@ const ApplicationsPage = () => {
   ]);
 
   const pageHandler = async (event) => {
+    setCurrentPage(event.selected);
     const page = event.selected + 1;
     await getJobApplications({ queries: { ...formik.values, page }, jobId });
   };
 
   return (
-    <section className="fullHeight">
-      <Container>
-        {userApplicationSuccess ? (
-          <div className={styles.container}>
-            <form onSubmit={formik.handleSubmit}>
-              <Card className={styles.card}>
-                <Select
-                  label="Status"
-                  errorText={formik.touched.status && formik.errors.status}
-                  invalid={formik.touched.status && formik.errors.status}
-                  selectProps={{
-                    name: "status",
-                    id: "status",
-                    value: formik.values.status,
-                    onBlur: formik.handleBlur,
-                    onChange: formik.handleChange,
-                  }}
-                  options={statusOptions}
-                />
-                <Select
-                  label="Sort"
-                  errorText={formik.touched.sort && formik.errors.sort}
-                  invalid={formik.touched.sort && formik.errors.sort}
-                  selectProps={{
-                    name: "sort",
-                    id: "sort",
-                    value: formik.values.sort,
-                    onBlur: formik.handleBlur,
-                    onChange: formik.handleChange,
-                  }}
-                  options={sortOptions}
-                />
-                <Button
-                  disabled={userApplicationLoading}
-                  type="submit"
-                  className={styles.submitBtn}
-                >
-                  Submit
-                </Button>
-              </Card>
-            </form>
-            {userApplicationData.totalApplications ? (
-              <>
-                <h3>{`${userApplicationData.totalApplications} application${
-                  userApplicationData.totalApplications > 1 ? "s" : ""
-                } found`}</h3>
-                <ul className={styles.jobList}>
-                  {userApplicationData.applications.map((application) => {
-                    return (
-                      <li key={application._id}>
-                        <JobApplication application={application} />
-                      </li>
-                    );
-                  })}
-                </ul>
-                {userApplicationData.numOfPages > 1 && (
-                  <ReactPaginate
-                    breakLabel="..."
-                    nextLabel="next >"
-                    onPageChange={pageHandler}
-                    pageRangeDisplayed={5}
-                    pageCount={userApplicationData.numOfPages}
-                    previousLabel="< previous"
-                    renderOnZeroPageCount={null}
-                    className={styles.paginateContainer}
-                    pageLinkClassName={styles.paginatePage}
-                    activeLinkClassName={styles.activePaginatePage}
-                    previousLinkClassName={styles.paginateBtn}
-                    nextLinkClassName={styles.paginateBtn}
+    <>
+      <Head>
+        <title>Job Applications</title>
+      </Head>
+      <section className="fullHeight">
+        <Container>
+          {userApplicationSuccess ? (
+            <div className={styles.container}>
+              <form onSubmit={formik.handleSubmit}>
+                <Card className={styles.card}>
+                  <Select
+                    label="Status"
+                    errorText={formik.touched.status && formik.errors.status}
+                    invalid={formik.touched.status && formik.errors.status}
+                    selectProps={{
+                      name: "status",
+                      id: "status",
+                      value: formik.values.status,
+                      onBlur: formik.handleBlur,
+                      onChange: formik.handleChange,
+                    }}
+                    options={statusOptions}
                   />
-                )}
-              </>
-            ) : (
-              <h3>No applications found...!!!</h3>
-            )}
-          </div>
-        ) : (
-          <div className={styles.loadingContainer}>
-            <Spinner />
-          </div>
-        )}
-      </Container>
-    </section>
+                  <Select
+                    label="Sort"
+                    errorText={formik.touched.sort && formik.errors.sort}
+                    invalid={formik.touched.sort && formik.errors.sort}
+                    selectProps={{
+                      name: "sort",
+                      id: "sort",
+                      value: formik.values.sort,
+                      onBlur: formik.handleBlur,
+                      onChange: formik.handleChange,
+                    }}
+                    options={sortOptions}
+                  />
+                  <Button
+                    disabled={userApplicationLoading}
+                    type="submit"
+                    className={styles.submitBtn}
+                  >
+                    Submit
+                  </Button>
+                </Card>
+              </form>
+              {userApplicationData.totalApplications ? (
+                <>
+                  <h3>{`${userApplicationData.totalApplications} application${
+                    userApplicationData.totalApplications > 1 ? "s" : ""
+                  } found`}</h3>
+                  <ul className={styles.jobList}>
+                    {userApplicationData.applications.map((application) => {
+                      return (
+                        <li key={application._id}>
+                          <JobApplication application={application} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  {userApplicationData.numOfPages > 1 && (
+                    <ReactPaginate
+                      breakLabel="..."
+                      nextLabel="next >"
+                      onPageChange={pageHandler}
+                      pageRangeDisplayed={5}
+                      pageCount={userApplicationData.numOfPages}
+                      previousLabel="< previous"
+                      renderOnZeroPageCount={null}
+                      className={styles.paginateContainer}
+                      pageLinkClassName={styles.paginatePage}
+                      activeLinkClassName={styles.activePaginatePage}
+                      previousLinkClassName={styles.paginateBtn}
+                      nextLinkClassName={styles.paginateBtn}
+                      forcePage={currentPage}
+                    />
+                  )}
+                </>
+              ) : (
+                <h3>No applications found...!!!</h3>
+              )}
+            </div>
+          ) : (
+            <div className={styles.loadingContainer}>
+              <Spinner />
+            </div>
+          )}
+        </Container>
+      </section>
+    </>
   );
 };
 

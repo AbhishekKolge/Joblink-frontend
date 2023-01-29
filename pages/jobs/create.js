@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Container from "../../components/UI/Container/Container";
 import CreateJobForm from "../../components/CreateJobForm/CreateJobForm";
 
@@ -5,11 +7,16 @@ import styles from "./CreateJob.module.css";
 
 const CreateJobPage = () => {
   return (
-    <section className="fullHeight">
-      <Container className={styles.container}>
-        <CreateJobForm />
-      </Container>
-    </section>
+    <>
+      <Head>
+        <title>Create Job</title>
+      </Head>
+      <section className="fullHeight">
+        <Container className={styles.container}>
+          <CreateJobForm />
+        </Container>
+      </section>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import Head from "next/head";
 
 import styles from "./VerifyEmail.module.css";
 
@@ -60,17 +61,22 @@ const VerifyEmail = () => {
   }, [verifyEmailSuccess, verifyEmailIsError, verifyEmailError]);
 
   return (
-    <section className="fullHeight">
-      <Container className={styles.container}>
-        <div className={styles.spinner}>
-          <Spinner loading={true} />
-        </div>
-        <h4 className={styles.heading}>Verifying Your Email...!!!</h4>
-        <p className={styles.helperText}>
-          Sit back and relax, we are verifying your email address
-        </p>
-      </Container>
-    </section>
+    <>
+      <Head>
+        <title>Verify Email</title>
+      </Head>
+      <section className="fullHeight">
+        <Container className={styles.container}>
+          <div className={styles.spinner}>
+            <Spinner loading={true} />
+          </div>
+          <h4 className={styles.heading}>Verifying Your Email...!!!</h4>
+          <p className={styles.helperText}>
+            Sit back and relax, we are verifying your email address
+          </p>
+        </Container>
+      </section>
+    </>
   );
 };
 
