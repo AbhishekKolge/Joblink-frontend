@@ -9,7 +9,7 @@ const nextConfig = (phase) => {
         domains: ['res.cloudinary.com'],
       },
       env: {
-        NEXT_PUBLIC_URL: 'https://joblink-backend.onrender.com/api/v1',
+        NEXT_PUBLIC_URL: 'https://shy-wear-fish.cyclic.app/api/v1',
         NEXT_API_URL: '/api/v1',
       },
       async rewrites() {
@@ -28,8 +28,8 @@ const nextConfig = (phase) => {
       domains: ['res.cloudinary.com'],
     },
     env: {
-      NEXT_PUBLIC_URL: 'https://joblink-backend.onrender.com/api/v1',
-      NEXT_API_URL: 'https://joblink-backend.onrender.com/api/v1',
+      NEXT_PUBLIC_URL: 'https://shy-wear-fish.cyclic.app/api/v1',
+      NEXT_API_URL: 'https://shy-wear-fish.cyclic.app/api/v1',
     },
     eslint: {
       ignoreDuringBuilds: true,
